@@ -8,14 +8,14 @@ namespace DIO.Series
         private Genre Genre { get; set; }
         private string Title { get; set; }
         private string Description { get; set; }
-        private int Year { get; set; }
-        public Movie(int id, Genre genre, string title, string description, int year)
+        private int RealeaseYear { get; set; }
+        public Movie(int id, Genre genre, string title, string description, int realeaseYear)
         {
             this.Id = id;
             this.Genre = genre;
             this.Title = title;
             this.Description = description;
-            this.Year = year;
+            this.RealeaseYear = year;
         }
         public override string ToString()
         {
@@ -23,7 +23,7 @@ namespace DIO.Series
             message += "Genre: " + this.Genre + Environment.NewLine;
             message += "Title: " + this.Title + Environment.NewLine;
             message += "Description: " + this.Description + Environment.NewLine;
-            message += "Year: " + this.Year;
+            message += "Year: " + this.RealeaseYear;
             return message;
         }
 
