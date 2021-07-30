@@ -27,11 +27,15 @@ namespace DIO.Series
                     case "5":
                         ShowMovieDetails();
                         break;
-                    case "C":
+                    case "6":
                         Console.Clear();
                         break;
                     default:
-                        throw new ArgumentOutOfRangeException();
+                        //throw new ArgumentOutOfRangeException();
+                        Console.WriteLine("Sorry, this option is invalid!\nChoose another one!");
+                        Console.ReadKey();
+                        Console.Clear();
+                        break;
                 }
                 userOption = GetUserOption();
             }
@@ -70,7 +74,6 @@ namespace DIO.Series
             foreach (var movie in moviesList)
             {
                 var removed = movie.IsRemoved();
-                )
                 Console.WriteLine("#ID {0} - {1} {2}", movie.returnId(), movie.returnTitle(), (removed ? "*Removed*" : ""));
             }
         }

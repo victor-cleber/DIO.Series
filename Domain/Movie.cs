@@ -28,8 +28,8 @@ namespace DIO.Series
             message += "Genre: " + this.Genre + Environment.NewLine;
             message += "Title: " + this.Title + Environment.NewLine;
             message += "Description: " + this.Description + Environment.NewLine;
-            message += "Year: " + this.RealeaseYear;
-            message += "Removed: " + this.Removed;
+            message += "Year: " + this.RealeaseYear + Environment.NewLine;
+            message += "Removed: " + (this.Removed ? "*Removed*" : "");
             return message;
         }
 
