@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace DIO.Series
+namespace DIO.Series.Interfaces
 {
     public interface IRepository<T>
     {
@@ -9,6 +9,6 @@ namespace DIO.Series
         void Insert(T entity);
         void Delete(int id);
         void Update(int id, T entity);
-        int NexId();
+        int NextId();
     }
 }

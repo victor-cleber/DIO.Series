@@ -9,13 +9,18 @@ namespace DIO.Series
         private string Title { get; set; }
         private string Description { get; set; }
         private int RealeaseYear { get; set; }
-        public Movie(int id, Genre genre, string title, string description, int realeaseYear)
+
+        private bool Removed { get; set; }
+        public Movie(int id, Genre genre, string title, int realeaseYear, string description)
         {
             this.Id = id;
             this.Genre = genre;
             this.Title = title;
             this.Description = description;
-            this.RealeaseYear = year;
+            this.RealeaseYear = realeaseYear;
+            //The best option is not remove a record
+            //just update as a removed
+            this.Removed = false;
         }
         public override string ToString()
         {
@@ -24,6 +29,7 @@ namespace DIO.Series
             message += "Title: " + this.Title + Environment.NewLine;
             message += "Description: " + this.Description + Environment.NewLine;
             message += "Year: " + this.RealeaseYear;
+            message += "Removed: " + this.Removed;
             return message;
         }
 
@@ -35,6 +41,15 @@ namespace DIO.Series
         public int returnId()
         {
             return this.Id;
+        }
+        public bool IsRemoved()
+        {
+            return this.Removed;
+        }
+        public void Remove()
+        {
+            this.Removed = true;
+
         }
     }
 }
